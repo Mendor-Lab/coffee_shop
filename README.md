@@ -26,8 +26,7 @@ For the best development experience, we recommend installing these VS Code exten
 
 1. **Clone the repository**
    ```bash
-   https://github.com/usernames/coffee_shop.git
-   cd coffee_shop
+   https://github.com/Mendor-Lab/coffee_shop.git
    ```
 
 2. **Install dependencies** (if any)
