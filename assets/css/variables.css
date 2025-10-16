@@ -1,17 +1,14 @@
 :root {
   /* Color Palette */
-  --coffee-dark: #3e2723;
-  --coffee-medium: #5d4037;
-  --coffee-light: #795548;
-  --cream: #f5f5dc;
-  --latte: #d7ccc8;
-  --beige: #efebe9;
-  --accent-teal: #4a9b8e;
-  --white: #ffffff;
-  --text-dark: #2c2c2c;
-  --text-light: #6d6d6d;
-  --error: #e53935;
-  --success: #43a047;
+  --coffee-dark: #3E2723;
+  --coffee-medium: #5D4037;
+  --coffee-light: #8D6E63;
+  --latte: #D7CCC8;
+  --beige: #EFEBE9;
+  --accent: #FF9800;
+  --white: #FFFFFF;
+  --text-dark: #212121;
+  --text-light: #757575;
   
   /* Typography */
   --font-primary: 'Poppins', sans-serif;
