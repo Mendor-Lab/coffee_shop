@@ -298,6 +298,76 @@ a {
     opacity: 0.5;
   }
 }
+/* About Section */
+        .about {
+            background-color: var(--white);
+        }
+
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .about-text h2 {
+            font-size: 2.5rem;
+            color: var(--coffee-dark);
+            margin-bottom: 1.5rem;
+        }
+
+        .about-text p {
+            margin-bottom: 1.5rem;
+            color: var(--text-light);
+        }
+
+        .about-features {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .feature {
+            display: flex;
+            align-items: flex-start;
+        }
+
+        .feature-icon {
+            background-color: var(--latte);
+            color: var(--accent);
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 1rem;
+            flex-shrink: 0;
+        }
+
+        .feature-text h4 {
+            font-size: 1.1rem;
+            margin-bottom: 0.5rem;
+            color: var(--coffee-dark);
+        }
+
+        .about-image {
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .about-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+            transition: transform 0.5s ease;
+        }
+
+        .about-image:hover img {
+            transform: scale(1.05);
+        }
 
 /* Order Online Section */
         .order-online {
