@@ -5,21 +5,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About Us - Bite & Brew</title>
     <meta name="description" content="Learn about Bite&Brew's story, mission, and the passionate team behind our artisan coffee and delightful bites.">
-    
+
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
-    
+
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    
+
     <!-- Custom CSS -->
     <link rel="stylesheet" href="assets/css/variables.css">
     <link rel="stylesheet" href="assets/css/styles.css">
-    <link rel="stylesheet" href="assets/css/responsive.css">
 </head>
 <body>
-    <!-- Header will be loaded by JavaScript -->
-    <header></header>
+    <?php include 'includes/header.php'; ?>
 
     <main style="padding-top: 100px;">
         <section class="section about" id="about">
@@ -33,10 +31,10 @@
                         <h2>Our Story</h2>
                         <p>Founded in 2015, Bite&Brew began as a small neighborhood café with a simple mission: to create a welcoming space where people could enjoy exceptional coffee and delicious snacks.</p>
                         <p>Over the years, we've grown into a beloved community hub, but our commitment to quality, sustainability, and warm hospitality remains unchanged.</p>
-                        
+
                         <h3 style="margin-top: 2rem;">Our Mission</h3>
                         <p>We strive to provide exceptional service, delicious pastries, and a welcoming space for everyone. Whether you're here to work, relax, or catch up with friends, Bite&Brew is your home away from home.</p>
-                        
+
                         <div class="about-features">
                             <div class="feature">
                                 <div class="feature-icon">✓</div>
@@ -76,10 +74,10 @@
         </section>
     </main>
 
-    <!-- Footer will be loaded by JavaScript -->
-    <footer></footer>
+    <?php include 'includes/footer.php'; ?>
 
     <!-- JavaScript -->
     <script src="assets/js/main.js"></script>
+    <script src="assets/js/cart.js"></script>
 </body>
 </html>

@@ -13,35 +13,35 @@
                     <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
                 </div>
             </div>
-            
+
             <div class="footer-widget">
                 <h4>Quick Links</h4>
                 <ul class="footer-links">
                     <li class="nav-item">
-                        <a href="index.html" class="nav-link">Home</a>
+                        <a href="index.php" class="nav-link">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a href="menu.html" class="nav-link">Menu</a>
+                        <a href="menu.php" class="nav-link">Menu</a>
                     </li>
                     <li class="nav-item">
-                        <a href="about.html" class="nav-link">About</a>
+                        <a href="about.php" class="nav-link">About</a>
                     </li>
                     <li class="nav-item">
-                        <a href="contact.html" class="nav-link">Contact</a>
+                        <a href="contact.php" class="nav-link">Contact</a>
                     </li>
                 </ul>
             </div>
-            
+
             <div class="footer-widget">
                 <h4>Contact Info</h4>
                 <ul class="contact-info">
-                    <li><i class="fas fa-map-marker-alt"></i> 123 Coffee Street, City, Country</li>
-                    <li><i class="fas fa-phone"></i> +1 234 567 890</li>
-                    <li><i class="fas fa-envelope"></i> info@biteandbrew.com</li>
-                    <li><i class="fas fa-clock"></i> Mon-Sun: 7:00 AM - 9:00 PM</li>
+                    <li><i class="fas fa-map-marker-alt"></i> 123 Coffee Street, Vaal, Vanderbijl 1939</li>
+                    <li><i class="fas fa-phone"></i> (123) 456-7890</li>
+                    <li><i class="fas fa-envelope"></i> hello@biteandbrew.com</li>
+                    <li><i class="fas fa-clock"></i> Mon-Fri: 7am-8pm | Sat-Sun: 8am-9pm</li>
                 </ul>
             </div>
-            
+
             <div class="footer-widget">
                 <h4>Newsletter</h4>
                 <p>Subscribe to our newsletter for the latest updates and offers.</p>
@@ -51,19 +51,18 @@
                 </form>
             </div>
         </div>
-        
+
         <div class="footer-bottom">
             <p>&copy; <span id="current-year"></span> Bite&Brew. All rights reserved.</p>
             <div class="footer-legal">
-                <a href="privacy-policy.html">Privacy Policy</a>
+                <a href="privacy-policy.php">Privacy Policy</a>
                 <span>|</span>
-                <a href="terms-of-service.html">Terms of Service</a>
+                <a href="terms-of-service.php">Terms of Service</a>
             </div>
         </div>
     </div>
 </footer>
 
 <script>
-    // Update copyright year
     document.getElementById('current-year').textContent = new Date().getFullYear();
 </script>

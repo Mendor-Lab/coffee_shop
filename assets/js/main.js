@@ -1,41 +1,9 @@
 // assets/js/main.js
 document.addEventListener('DOMContentLoaded', function() {
-    // Load components first
-    loadComponents().then(() => {
-        // Initialize all functionality after components are loaded
-        initNavigation();
-        initMobileMenu();
-        setActiveLink();
-        initScrollEffects();
-    });
-
-    async function loadComponents() {
-        try {
-            // Load header
-            const headerResponse = await fetch('includes/header.html');
-            if (!headerResponse.ok) throw new Error('Failed to load header');
-            const headerHTML = await headerResponse.text();
-            const header = document.querySelector('header');
-            if (header) {
-                header.outerHTML = headerHTML;
-            } else {
-                document.body.insertAdjacentHTML('afterbegin', `<header>${headerHTML}</header>`);
-            }
-
-            // Load footer
-            const footerResponse = await fetch('includes/footer.html');
-            if (!footerResponse.ok) throw new Error('Failed to load footer');
-            const footerHTML = await footerResponse.text();
-            const footer = document.querySelector('footer');
-            if (footer) {
-                footer.outerHTML = footerHTML;
-            } else {
-                document.body.insertAdjacentHTML('beforeend', `<footer>${footerHTML}</footer>`);
-            }
-        } catch (error) {
-            console.error('Error loading components:', error);
-        }
-    }
+    initNavigation();
+    initMobileMenu();
+    setActiveLink();
+    initScrollEffects();
 
     function initMobileMenu() {
         const menuToggle = document.querySelector('.menu-toggle');
@@ -97,11 +65,11 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     function setActiveLink() {
-        const currentPage = window.location.pathname.split('/').pop() || 'index.html';
+        const currentPage = window.location.pathname.split('/').pop() || 'index.php';
         document.querySelectorAll('.nav-link').forEach(link => {
             const linkPath = link.getAttribute('href');
-            if (linkPath === currentPage || 
-                (currentPage === '' && linkPath === 'index.html')) {
+            if (linkPath === currentPage ||
+                (currentPage === '' && linkPath === 'index.php')) {
                 link.classList.add('active');
                 link.setAttribute('aria-current', 'page');
             } else {
@@ -119,7 +87,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 const href = link.getAttribute('href');
                 
                 // Handle internal page links
-                if (href.endsWith('.html')) {
+                if (href.endsWith('.php') || href.endsWith('.html')) {
                     // Let the browser handle the navigation
                     return;
                 }
