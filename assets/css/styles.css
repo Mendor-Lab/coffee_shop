@@ -91,6 +91,7 @@ a {
   white-space: nowrap;
 }
 
+
 .logo img {
   height: 40px;
   width: auto;
@@ -195,15 +196,6 @@ a {
   gap: 1rem;
 }
 
-.header-actions .primary-button,
-.header-actions .btn {
-  white-space: nowrap;
-}
-
-.header-actions .btn-primary {
-  background-color: var(--accent);
-  color: var(--white);
-}
 
 /* Mobile Menu Toggle */
 .menu-toggle {
@@ -742,44 +734,6 @@ footer {
 .footer-links {
     list-style: none;
     padding: 0;
-}
-
-.footer-links li {
-    margin-bottom: 0.8rem;
-    display: flex;
-    align-items: center;
-    gap: 0.8rem;
-}
-
-.footer-links i {
-    width: 20px;
-    color: var(--accent);
-}
-
-.footer-links a {
-    color: var(--latte);
-    text-decoration: none;
-    transition: all 0.3s ease;
-    position: relative;
-    padding-left: 0;
-}
-
-.footer-links a::before {
-    content: '→';
-    position: absolute;
-    left: -15px;
-    opacity: 0;
-    transition: all 0.3s ease;
-}
-
-.footer-links a:hover {
-    padding-left: 15px;
-    color: var(--accent);
-}
-
-.footer-links a:hover::before {
-    opacity: 1;
-    left: 0;
 }
 
 .social-links {
