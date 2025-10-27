@@ -1,0 +1,86 @@
+<button onclick="updateCart()">Update Cart</button>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopping Cart - Bites & Brew</title>
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        .cart-container {
+            max-width: 900px;
+            margin: 50px auto;
+            background: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+        }
+        h1 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        th, td {
+            padding: 12px;
+            border-bottom: 1px solid #ddd;
+            text-align: center;
+        }
+        .total {
+            text-align: right;
+            font-size: 20px;
+            margin-top: 20px;
+        }
+        .checkout-btn {
+            display: block;
+            width: 200px;
+            margin: 20px auto;
+            padding: 12px;
+            background: #6b4f4f;
+            color: white;
+            text-align: center;
+            border-radius: 5px;
+            text-decoration: none;
+            font-size: 18px;
+        }
+        .checkout-btn:hover {
+            background: #4a3636;
+        }
+    </style>
+</head>
+<body>
+
+   <div class="cart-container">
+    <h1>Your Cart</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Item</th>
+                <th>Price</th>
+                <th>Qty</th>
+                <th>Total</th>
+                <th>Remove</th>
+            </tr>
+        </thead>
+        <tbody id="cart-items"></tbody>
+    </table>
+
+    <div class="total">
+        Subtotal: R<span id="cart-total">0.00</span>
+    </div>
+
+    <!-- ✅ Goes back to menu to add more -->
+    <button onclick="window.location.href='menu.html'" class="update-btn">Add More Items</button>
+
+    <!-- ✅ Continue to checkout -->
+    <button onclick="window.location.href='checkout.html'" class="checkout-btn">Checkout</button>
+</div>
+
+
+    <script src="js/cart.js"></script>
+
+</body>
+</html>

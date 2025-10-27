@@ -1,0 +1,45 @@
+body {
+    font-family: Arial, sans-serif;
+    background: #fafafa;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    padding: 15px;
+    display: flex;
+    justify-content: space-between;
+    background: #333;
+    color: white;
+}
+
+.checkout-container {
+    max-width: 800px;
+    margin: 30px auto;
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+}
+
+th, td {
+    padding: 10px;
+    border-bottom: 1px solid #ccc;
+}
+.success-message {
+    color: green;
+    font-weight: bold;
+}
+button {
+    background: #5c3d2e;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
