@@ -4,7 +4,7 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Bite & Brew</title>
-        <meta name="description" content="Experience the finest coffee at Bite&Brew. Handcrafted beverages, fresh pastries, and a cozy atmosphere.">
+        <meta name="description" content="Experience the finest, Handcrafted beverages, fresh pastries, and a cozy atmosphere.">
 
         
         <!-- Google Fonts -->
@@ -14,30 +14,13 @@
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
         
         <!-- Custom CSS -->
+        <link rel="stylesheet" href="assets/css/variables.css">
         <link rel="stylesheet" href="assets/css/styles.css">
         <link rel="stylesheet" href="assets/css/responsive.css">
-        <link rel="stylesheet" href="assets/css/variables.css">
     </head>
     <body>
-        <!-- Header & Navigation -->
-        <header class="header">
-            <div class="container">
-                <nav class="navbar">
-                    <div class="logo">
-                        <a href="index.html">Bite<span>&</span>Brew</a>
-                    </div>
-                    <ul class="nav-links">
-                        <li><a href="index.html" class="active">Home</a></li>
-                        <li><a href="about.html">About Us</a></li>
-                        <li><a href="contact.html">Contact</a></li>
-                        
-                    </ul>
-                    <button class="primary-button">Order Now</button>
-                    </div>
-                    <div class="hamburger"></div>
-                </nav>
-            </div>
-        </header>
+        <!-- Header will be loaded by JavaScript -->
+        <header></header>
         <!-- Hero Section -->
         <section class="hero" id="home">
             <div class="container">
@@ -45,7 +28,7 @@
                     <h1 class="hero-title">Artisan Coffee <br>& <br>Delightful Bites</h1>
                     <p class="hero-subtitle">Experience the perfect blend of rich flavors and cozy ambiance at Bite&Brew. Where every cup tells a story and every bite brings joy.</p>
                     <div class="hero-actions">
-                        <a href="#menu" class="secondary-button">View Menu</a>
+                        <a href="menu.html" class="secondary-button">View Menu</a>
                             <a href="about.html" class="primary-button">Learn More</a>
                     </div>
                 </div>
@@ -92,6 +75,22 @@
                                 <p>We support local artists and community events.</p>
                             </div>
                         </div>
+                        <div class="stats-container flex">
+                            <div class="stat-item">
+                                <div class="stat-number">5</div>
+                                <div class="stat-label">
+                                    <p>Years of Experience</p>
+                                    
+                                </div>
+                            </div>
+                            <div class="stat-item">
+                                <div class="stat-number">50+</div>
+                                <div class="stat-label">
+                                    <p>Expert Team Members</p>
+                                    
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
                 <div class="about-image">
@@ -130,7 +129,7 @@
                 </div>
             </div>
             <div style="text-align: center; margin-top: 3rem;">
-                <button class="hero-button">Start Your Order</button>
+                <button class="primary-button">Start Your Order</button>
             </div>
         </div> 
         </section>  
@@ -194,61 +193,17 @@
                             <label for="message">Your Message</label>
                             <textarea id="message" class="form-control" required></textarea>
                         </div>
-                        <button type="submit" class="hero-button" style="width: 100%;">Send Message</button>
+                        <button type="submit" class="primary-button" style="width: 100%;">Send Message</button>
                     </form>
                 </div>
             </div>
         </div>
     </section>  
-    <!-- Footer -->
-<footer>
-    <div class="container">
-        <div class="footer-content">
-            <div class="footer-column">
-                <h4>Bite&Bree</h4>
-                <p>Artisan coffee and delightful bites in a warm, welcoming atmosphere. Experience the perfect blend of flavor and comfort.</p>
-                <div class="social-links">
-                    <a href="#" class="social-link" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-                    <a href="#" class="social-link" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-                    <a href="#" class="social-link" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
-                    <a href="#" class="social-link" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-                </div>
-            </div>
-            <div class="footer-column">
-                <h4>Quick Links</h4>
-                <ul class="footer-links">
-                    <li><a href="#home"><i class="fas fa-chevron-right"></i> Home</a></li>
-                    <li><a href="#menu"><i class="fas fa-chevron-right"></i> Menu</a></li>
-                    <li><a href="#about"><i class="fas fa-chevron-right"></i> About Us</a></li>
-                    <li><a href="#order"><i class="fas fa-chevron-right"></i> Order Online</a></li>
-                    <li><a href="#contact"><i class="fas fa-chevron-right"></i> Contact</a></li>
-                </ul>
-            </div>
-            <div class="footer-column">
-                <h4>Contact Info</h4>
-                <ul class="footer-links">
-                    <li><i class="fas fa-map-marker-alt"></i> 123 Coffee Street, Brew District</li>
-                    <li><i class="fas fa-city"></i> Vaal, Vanderbijl 1939</li>
-                    <li><i class="fas fa-phone"></i> (123) 456-7890</li>
-                    <li><i class="fas fa-envelope"></i> hello@biteandbree.com</li>
-                </ul>
-            </div>
-            <div class="footer-column">
-                <h4>Newsletter</h4>
-                <p>Subscribe to our newsletter for updates on new menu items and special offers.</p>
-                <form class="newsletter-form">
-                    <input type="email" class="form-control" placeholder="Your email address" required>
-                    <button type="submit" class="newsletter-button">
-                        <i class="fas fa-paper-plane"></i> Subscribe
-                    </button>
-                </form>
-            </div>
-        </div>
-        <div class="footer-bottom">
-            <p>&copy; 2025 Bite&Bree. All rights reserved.</p>
-        </div>
-    </div>
-</footer>
+    
+    <!-- Footer will be loaded by JavaScript -->
+    <footer></footer>
 
+    <!-- JavaScript -->
+    <script src="assets/js/main.js"></script>
     </body>
 </html>
