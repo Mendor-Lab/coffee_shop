@@ -1,153 +1,137 @@
-# Bite & Brew - Coffee Shop E-commerce Website
+# Bite & Brew — Coffee Shop Web App
 
 A full-stack e-commerce website for Bite & Brew coffee shop, built with PHP, JavaScript, and Supabase.
+The project supports a dynamic menu, shopping cart (localStorage), checkout processing, and contact handling.
 
-## Features
+## 🌟 Key Features
 
 - Dynamic menu with category filtering
 - Shopping cart with localStorage persistence
-- Checkout system with customer details
+- Secure checkout system
 - Contact form with validation
-- Order management with Supabase database
-- Responsive design for all devices
-- Real-time cart count updates
+- Order management via Supabase/MySQL
+- Responsive design (mobile-first)
+- Real-time cart updates
 
-## 🚀 Getting Started
+## 🔧 Prerequisites
 
-### Prerequisites
+- PHP 7.4+ (with cURL and mbstring extensions)
+- Modern web browser
+- VS Code (recommended)
+- XAMPP/MAMP or PHP built-in server
+- Git
+- Supabase account (optional)
 
-- PHP 7.4 or higher with cURL extension
-- A modern web browser (Chrome, Firefox, Safari, or Edge)
-- A code editor (VS Code recommended)
-- Supabase account (database is pre-configured)
+## 🚀 Installation
 
-### Installation
+### Option A: Using XAMPP (Recommended)
 
-1. **Clone the repository**
+1. Install XAMPP from [apache friends](https://www.apachefriends.org/)
+2. Clone the repository:
    ```bash
    git clone https://github.com/Mendor-Lab/coffee_shop.git
    cd coffee_shop
    ```
+3. Move project to XAMPP directory:
+   ```bash
+   # Windows
+   xcopy /E /I coffee_shop C:\xampp\htdocs\coffee_shop
+   # macOS/Linux
+   cp -r coffee_shop /Applications/XAMPP/htdocs/
+   ```
+4. Start Apache in XAMPP Control Panel
+5. Visit: `http://localhost/coffee_shop`
 
-2. **Configure Environment**
-   The `.env` file contains Supabase credentials (already configured)
+### Option B: Using PHP Built-in Server
 
-3. **Start PHP Server**
+1. Clone the repository
+2. Navigate to project directory
+3. Start server:
    ```bash
    php -S localhost:8000
    ```
-   Then open `http://localhost:8000` in your browser.
+4. Visit: `http://localhost:8000`
 
 ## 📁 Project Structure
 
 ```
-bite-n-brew/
-├── assets/
-│   ├── css/
-│   │   ├── styles.css      # Main styles
-│   │   ├── variables.css   # CSS variables
-│   │   ├── menu.css        # Menu page styles
-│   │   ├── cart.css        # Cart page styles
-│   │   └── contact.css     # Contact page styles
-│   ├── js/
-│   │   ├── main.js         # Core functionality
-│   │   ├── cart.js         # Cart operations
-│   │   ├── menu.js         # Menu display
-│   │   ├── cart-page.js    # Cart page logic
-│   │   └── contact.js      # Contact form validation
-│   └── public/
-│       └── icons/          # Logo and icons
-├── data/
-│   └── menu.json           # Menu items data
-├── includes/
-│   ├── header.php          # Shared header
-│   └── footer.php          # Shared footer
-├── php/
-│   ├── supabase-client.php # Supabase connection
-│   ├── send-mail.php       # Contact form handler
-│   └── process-order.php   # Order processing
-├── index.php               # Home page
-├── menu.php                # Menu page
-├── cart.php                # Shopping cart
-├── contact.php             # Contact page
+coffee_shop/
+├── index.php                # Home page
 ├── about.php               # About page
-└── README.md
+├── menu.php               # Menu listing
+├── cart.php               # Shopping cart
+├── contact.php            # Contact form
+│
+├── includes/              # Shared components
+├── assets/               # Static resources
+│   ├── css/
+│   ├── js/
+│   └── images/
+│
+├── backend/              # Server logic
+├── data/                # Local storage
+└── docs/                # Documentation
 ```
 
-## 🎨 Features Overview
+## ⚙️ Configuration
 
-### Menu System
-- Dynamic product loading from JSON
-- Category filtering (Coffee, Pastries, Specialty Drinks, Snacks)
-- Product cards with images, descriptions, and prices
-- Add to cart functionality with notifications
+1. Copy environment template:
+   ```bash
+   cp .env.example .env
+   ```
 
-### Shopping Cart
-- LocalStorage-based persistence
-- Quantity controls (increase/decrease)
-- Remove items functionality
-- Clear cart option
-- Real-time total calculation with 15% tax
+2. Update `.env` with your credentials:
+   ```env
+   SUPABASE_URL=your_url
+   SUPABASE_KEY=your_key
+   SUPABASE_TABLE_ORDERS=orders
+   SUPABASE_TABLE_MESSAGES=messages
+   ```
 
-### Checkout
-- Customer details form with validation
-- Email and phone number validation
-- Order submission to Supabase database
-- Unique order ID generation
-- Order confirmation display
+## 👥 Development Workflow
 
-### Contact Form
-- Client-side validation
-- Email format validation
-- Message storage in Supabase
-- Fallback to file storage (messages.txt)
-- Success/error feedback
+1. Pull latest changes:
+   ```bash
+   git pull origin main
+   ```
 
-## 🗄️ Database Schema
+2. Create feature branch:
+   ```bash
+   git checkout -b feature/your-feature
+   ```
 
-### Orders Table
-- order_id (unique identifier)
-- customer_name, customer_email, customer_phone
-- delivery_address
-- items (JSON)
-- subtotal, tax, total
-- status (default: pending)
-- created_at timestamp
+3. Commit changes:
+   ```bash
+   git add .
+   git commit -m "Feature: brief description"
+   git push origin feature/your-feature
+   ```
 
-### Messages Table
-- name, email, subject, message
-- status (default: unread)
-- created_at timestamp
+4. Create Pull Request on GitHub
 
-## 🔒 Security
+## 🔍 Testing Checklist
 
-- Row Level Security (RLS) enabled on all tables
-- Public insert access for orders and messages
-- Authenticated read access for admin queries
-- Input validation on both client and server
-- Prepared statements for database queries
+- [ ] Responsive design (320px - 1024px)
+- [ ] Form validation
+- [ ] Cart functionality
+- [ ] Checkout process
+- [ ] Database operations
+- [ ] Accessibility compliance
 
-## 🎯 Technologies Used
+## 🛡️ Security Notes
 
-- **Frontend**: HTML5, CSS3, JavaScript (ES6+)
-- **Backend**: PHP 7.4+
-- **Database**: Supabase (PostgreSQL)
-- **Styling**: Custom CSS with CSS Variables
-- **Icons**: Font Awesome 6.0
-- **Fonts**: Google Fonts (Playfair Display, Poppins)
+- Never commit `.env` file
+- Sanitize all user inputs
+- Use prepared statements for DB queries
+- Implement server-side validation
+- Keep dependencies updated
 
-## 📱 Responsive Design
+## 👥 Team
 
-- Mobile-first approach
-- Breakpoints: 576px, 768px, 992px
-- Touch-optimized controls
-- Responsive navigation with mobile menu
+- Elton — UI/UX Designer & handles backend & final merge
+- Vinny — About & Contact + mail handler
+- Amelia — Menu & Cart JS
 
-## 🤝 Contributing
+## 📫 Support
 
-1. Create a new branch for your feature
-2. Commit your changes with descriptive messages
-3. Test thoroughly on different devices
-4. Push to your branch and create a Pull Request
-
-
+For questions or issues, please open a GitHub issue or contact the team lead.
