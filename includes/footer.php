@@ -4,7 +4,7 @@
             <div class="footer-widget">
                 <div class="footer-logo">
                     <img src="assets/public/icons/bites&brew_logo.svg" alt="Bite&Brew Logo">
-                    <h3>Bite&Brew</h3>
+                    <h3>Bites&Brew</h3>
                 </div>
                 <p class="footer-about">Serving the finest coffee and homemade pastries in a cozy atmosphere since 2015.</p>
                 <div class="social-links">
@@ -37,7 +37,7 @@
                 <ul class="contact-info">
                     <li><i class="fas fa-map-marker-alt"></i> 123 Coffee Street, Vaal, Vanderbijl 1939</li>
                     <li><i class="fas fa-phone"></i> (123) 456-7890</li>
-                    <li><i class="fas fa-envelope"></i> hello@biteandbrew.com</li>
+                    <li><i class="fas fa-envelope"></i> hello@bitesandbrew.com</li>
                     <li><i class="fas fa-clock"></i> Mon-Fri: 7am-8pm | Sat-Sun: 8am-9pm</li>
                 </ul>
             </div>
@@ -53,7 +53,7 @@
         </div>
 
         <div class="footer-bottom">
-            <p>&copy; <span id="current-year"></span> Bite&Brew. All rights reserved.</p>
+            <p>&copy; <span id="current-year"></span> Bites&Brew. All rights reserved.</p>
             <div class="footer-legal">
                 <a href="privacy-policy.php">Privacy Policy</a>
                 <span>|</span>

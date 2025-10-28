@@ -27,7 +27,10 @@
                     <h2>Our Menu</h2>
                     <p>Discover our handcrafted beverages, fresh pastries, and delicious snacks</p>
                 </div>
-
+                <!-- Search Bar -->
+                <div class="search-bar">
+                    <input type="text" id="searchInput" placeholder="Search items..." onkeyup="searchItems()">
+                </div>
                 <div class="menu-filters">
                     <button class="filter-btn active" data-category="All">All Items</button>
                     <button class="filter-btn" data-category="Coffee">Coffee</button>

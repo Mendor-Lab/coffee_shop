@@ -23,17 +23,22 @@
         <section class="section about" id="about">
             <div class="container">
                 <div class="section-title">
-                    <h2>About Bite & Brew</h2>
+                    <h2>About Us</h2>
                     <p>Your neighborhood coffee shop where every cup tells a story</p>
                 </div>
                 <div class="about-content">
                     <div class="about-text">
                         <h2>Our Story</h2>
-                        <p>Founded in 2015, Bite&Brew began as a small neighborhood café with a simple mission: to create a welcoming space where people could enjoy exceptional coffee and delicious snacks.</p>
+                        <p>Bites and Brew began with a simple idea — to create a cozy place where people can enjoy freshly brewed coffee and delicious handmade bites. Founded in 2024, our goal is to serve quality, warmth, and comfort in every cup and every bite.</p>
                         <p>Over the years, we've grown into a beloved community hub, but our commitment to quality, sustainability, and warm hospitality remains unchanged.</p>
 
+                        <p>Our journey started with a small coffee shop, and we've since expanded to include a bakery, a café, and a restaurant. We're proud to serve our community with the best coffee and pastries, and we're always looking for new ways to improve our service and offerings.</p>
+
+                        <p>We use premium coffee beans, handpicked ingredients, and bake our pastries fresh every morning. Whether you're studying, relaxing, or meeting friends — this is your place.</p>
                         <h3 style="margin-top: 2rem;">Our Mission</h3>
-                        <p>We strive to provide exceptional service, delicious pastries, and a welcoming space for everyone. Whether you're here to work, relax, or catch up with friends, Bite&Brew is your home away from home.</p>
+                        <p>We strive to provide exceptional service, delicious pastries, and a welcoming space for everyone. Whether you're here to work, relax, or catch up with friends, Bites and Brew is your home away from home.</p>
+
+                        
 
                         <div class="about-features">
                             <div class="feature">
@@ -67,11 +72,66 @@
                         </div>
                     </div>
                     <div class="about-image">
-                        <img src="https://images.unsplash.com/photo-1554118811-1e0d58224f24?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Bite&Brew café interior">
+                        <img src="assets/public/images/inside store.JPG" alt="Bites and Brew café interior">
                     </div>
                 </div>
             </div>
         </section>
+        
+        <section class="section team" id="team">
+    <div class="container">
+        <div class="section-title">
+            <h2>Meet the Team</h2>
+            <p>The passionate people behind your favorite coffee shop</p>
+        </div>
+        
+        <div class="team-container">
+            <div class="team-card">
+                <div class="team-image-wrapper">
+                    <img src="assets/public/images/thabo.jpg" alt="Team Member" class="team-photo">
+                    <div class="team-overlay">
+                        <p class="thank-you-message">Thank you for being an amazing customer!</p>
+                    </div>
+                </div>
+                <div class="team-card-content">
+                    <h3>Thabo Mokoena</h3>
+                    <span class="role">Founder & Head Barista</span>
+                    <p>Passionate about handcrafted coffee and building a community space for all coffee lovers.</p>
+                </div>
+            </div>
+            
+            <div class="team-card">
+                <div class="team-image-wrapper">
+                    <img src="assets/public/images/lele.jpg" alt="Team Member" class="team-photo">
+                    <div class="team-overlay">
+                        <p class="thank-you-message">We appreciate your support!</p>
+                    </div>
+                </div>
+                <div class="team-card-content">
+                    <h3>Lele Smith</h3>
+                    <span class="role">Pastry Chef</span>
+                    <p>Creates fresh muffins, croissants, and sweet treats every morning with love.</p>
+                </div>
+            </div>
+            
+            <div class="team-card">
+                <div class="team-image-wrapper">
+                    <img src="assets/public/images/michael.jpg" alt="Team Member" class="team-photo">
+                    <div class="team-overlay">
+                        <p class="thank-you-message">Your smile makes our day!</p>
+                    </div>
+                </div>
+                <div class="team-card-content">
+                    <h3>Michael Jacobs</h3>
+                    <span class="role">Store Manager</span>
+                    <p>Keeps everything running smoothly and ensures customer service is always top-notch.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
     </main>
 
     <?php include 'includes/footer.php'; ?>

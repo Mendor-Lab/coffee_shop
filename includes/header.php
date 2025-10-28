@@ -2,8 +2,8 @@
     <div class="container">
         <div class="header-content">
             <a href="index.php" class="logo">
-                <img src="assets/public/icons/bites&brew_logo.svg" alt="Bite&Brew Logo">
-                <span>Bite&Brew</span>
+                <img src="assets/public/icons/bites&brew_logo.svg" alt="Bites&Brew Logo">
+                <span>Bites&Brew</span>
             </a>
 
             <div class="main-nav">
@@ -31,7 +31,7 @@
                     <i class="fa fa-shopping-cart"></i>
                     <span class="cart-count" id="cartCount">0</span>
                 </a>
-                <a href="#order" class="primary-button">Order Online</a>
+                <a href="menu.php" class="primary-button">Order Online</a>
                 <button class="menu-toggle" aria-label="Toggle menu" aria-expanded="false">
                     <i class="fa fa-bars fa-2x"></i>
                 </button>
