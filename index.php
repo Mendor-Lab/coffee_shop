@@ -139,12 +139,11 @@
     <section class="section" id="contact">
         <div class="container">
             <div class="section-title">
-                <h2>Contact Us</h2>
+                <h2>Get in touch with us</h2>
                 <p>We'd love to hear from you. Visit us, give us a call, or send us a message.</p>
             </div>
             <div class="contact-content">
                 <div class="contact-info">
-                    <h3>Get in Touch</h3>
                     <div class="contact-details">
                         <div class="contact-item">
                             <div class="contact-icon">📍</div>
@@ -178,7 +177,6 @@
                 </div>
                 <div class="contact-form">
                     <h3>Send us a Message</h3>
-                    <p style="margin-bottom: 1.5rem;">Or visit our <a href="contact.php" style="color: var(--accent); text-decoration: underline;">full contact page</a></p>
                     <a href="contact.php" class="primary-button" style="width: 100%; display: block; text-align: center;">Go to Contact Page</a>
                 </div>
             </div>
