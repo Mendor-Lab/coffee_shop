@@ -69,6 +69,13 @@
                             <span class="filter-subtitle">Snacks</span>
                         </span>
                     </button>
+                    <button class="filter-btn" data-category="Combos">
+                        <i class="fa-solid fa-layer-group"></i>
+                        <span class="filter-text">
+                            <span class="filter-title">Value</span>
+                            <span class="filter-subtitle">Combos</span>
+                        </span>
+                    </button>
                 </div>
 
                 <div id="menuGrid" class="menu-grid">
