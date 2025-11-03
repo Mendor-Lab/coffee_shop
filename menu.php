@@ -32,15 +32,6 @@
                     <input type="text" id="searchInput" placeholder="Search items..." onkeyup="searchItems()">
                 </div>
 
-                <!-- Specials Section -->
-                <section class="specials" aria-labelledby="specials-title">
-                    <div class="specials-header">
-                        <h3 id="specials-title"><i class="fa-solid fa-star"></i> Specials</h3>
-                        <p class="specials-subtitle">Discover limited-time offers and chef’s picks</p>
-                    </div>
-                    <div id="specialsChips" class="specials-chips" role="tablist" aria-label="Specials filters"></div>
-                    <div id="specialsList" class="specials-list" aria-live="polite"></div>
-                </section>
 
                 <div class="menu-filters">
                     <button class="filter-btn active" data-category="All">

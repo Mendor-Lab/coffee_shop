@@ -54,11 +54,6 @@
 
         <div class="footer-bottom">
             <p>&copy; <span id="current-year"></span> Bites&Brew. All rights reserved.</p>
-            <div class="footer-legal">
-                <a href="privacy-policy.php">Privacy Policy</a>
-                <span>|</span>
-                <a href="terms-of-service.php">Terms of Service</a>
-            </div>
         </div>
     </div>
 </footer>

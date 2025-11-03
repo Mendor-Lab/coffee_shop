@@ -46,29 +46,4 @@ class SupabaseClient {
         }
     }
 
-    public function select($table, $columns = '*', $filters = []) {
-        $url = $this->supabaseUrl . "/rest/v1/" . $table . "?select=" . $columns;
-
-        foreach ($filters as $key => $value) {
-            $url .= "&" . $key . "=eq." . urlencode($value);
-        }
-
-        $ch = curl_init($url);
-        curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-        curl_setopt($ch, CURLOPT_HTTPHEADER, [
-            'Content-Type: application/json',
-            'apikey: ' . $this->supabaseKey,
-            'Authorization: Bearer ' . $this->supabaseKey
-        ]);
-
-        $response = curl_exec($ch);
-        $httpCode = curl_getinfo($ch, CURLINFO_HTTP_CODE);
-        curl_close($ch);
-
-        if ($httpCode >= 200 && $httpCode < 300) {
-            return ['success' => true, 'data' => json_decode($response, true)];
-        } else {
-            return ['success' => false, 'error' => $response];
-        }
-    }
 }
