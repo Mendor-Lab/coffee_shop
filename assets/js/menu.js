@@ -13,6 +13,31 @@ async function loadMenu() {
     }
 }
 
+// -----------------------
+// SEARCH BAR FUNCTIONALITY
+// -----------------------
+function searchItems() {
+    const input = document.getElementById('searchInput');
+    const term = (input ? input.value : '').trim().toLowerCase();
+
+    // Start from the current category selection
+    let base = currentCategory === 'All'
+        ? menuData.slice()
+        : menuData.filter(item => (item.category === currentCategory));
+
+    // Apply search term across name and description
+    if (term.length > 0) {
+        base = base.filter(item => {
+            const name = (item.name || '').toLowerCase();
+            const desc = (item.description || '').toLowerCase();
+            return name.includes(term) || desc.includes(term);
+        });
+    }
+
+    // Re-render the grid with the filtered items
+    displayMenu(base);
+}
+
 function displayMenu(items) {
     const menuGrid = document.getElementById('menuGrid');
 
@@ -51,12 +76,8 @@ function displayMenu(items) {
 
 function filterMenu(category) {
     currentCategory = category;
-    if (category === 'All') {
-        displayMenu(menuData);
-    } else {
-        const filtered = menuData.filter(item => item.category === category);
-        displayMenu(filtered);
-    }
+    // Reuse search logic so category + current search term are applied together
+    searchItems();
 }
 
 function attachCartListeners() {

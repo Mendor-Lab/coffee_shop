@@ -3,7 +3,7 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Bite & Brew</title>
+        <title>Bites & Brew</title>
         <meta name="description" content="Experience the finest, Handcrafted beverages, fresh pastries, and a cozy atmosphere.">
 
 
@@ -25,7 +25,7 @@
             <div class="container">
                 <div class="hero-content">
                     <h1 class="hero-title">Artisan Coffee <br>& <br>Delightful Bites</h1>
-                    <p class="hero-subtitle">Experience the perfect blend of rich flavors and cozy ambiance at Bite&Brew. Where every cup tells a story and every bite brings joy.</p>
+                    <p class="hero-subtitle">Experience the perfect blend of rich flavors and cozy ambiance at Bites&Brew. Where every cup tells a story and every bite brings joy.</p>
                     <div class="hero-actions">
                         <a href="menu.php" class="secondary-button">View Menu</a>
                             <a href="about.php" class="primary-button">Learn More</a>
@@ -44,7 +44,7 @@
             <div class="about-content">
                 <div class="about-text">
                     <h2>Our Story</h2>
-                    <p>Founded in 2015, Bite&Brew began as a small neighborhood café with a simple mission: to create a welcoming space where people could enjoy exceptional coffee and delicious snacks.</p>
+                    <p>Founded in 2015, Bites&Brew began as a small neighborhood café with a simple mission: to create a welcoming space where people could enjoy exceptional coffee and delicious snacks.</p>
                     <p>Over the years, we've grown into a beloved community hub, but our commitment to quality, sustainability, and warm hospitality remains unchanged.</p>
                     <div class="about-features">
                         <div class="feature">
@@ -94,7 +94,7 @@
                     </div>
                 </div>
                 <div class="about-image">
-                    <img src="https://images.unsplash.com/photo-1554118811-1e0d58224f24?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Bite&Brew café interior">
+                    <img src="https://images.unsplash.com/photo-1554118811-1e0d58224f24?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Bites&Brew café interior">
                 </div>
             </div>
         </div>
@@ -139,12 +139,11 @@
     <section class="section" id="contact">
         <div class="container">
             <div class="section-title">
-                <h2>Contact Us</h2>
+                <h2>Get in touch with us</h2>
                 <p>We'd love to hear from you. Visit us, give us a call, or send us a message.</p>
             </div>
             <div class="contact-content">
                 <div class="contact-info">
-                    <h3>Get in Touch</h3>
                     <div class="contact-details">
                         <div class="contact-item">
                             <div class="contact-icon">📍</div>
@@ -164,7 +163,7 @@
                             <div class="contact-icon">✉</div>
                             <div>
                                 <h4>Email Address</h4>
-                                <p>hello@biteandbrew.com</p>
+                                <p>hello@bitesandbrew.com</p>
                             </div>
                         </div>
                         <div class="contact-item">
@@ -178,7 +177,6 @@
                 </div>
                 <div class="contact-form">
                     <h3>Send us a Message</h3>
-                    <p style="margin-bottom: 1.5rem;">Or visit our <a href="contact.php" style="color: var(--accent); text-decoration: underline;">full contact page</a></p>
                     <a href="contact.php" class="primary-button" style="width: 100%; display: block; text-align: center;">Go to Contact Page</a>
                 </div>
             </div>

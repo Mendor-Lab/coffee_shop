@@ -126,5 +126,165 @@
     "category": "Snacks",
     "description": "Fresh bagel toasted and spread with creamy cheese",
     "image": "https://images.pexels.com/photos/4393668/pexels-photo-4393668.jpeg?auto=compress&cs=tinysrgb&w=600"
+  },
+  {
+    "id": 17,
+    "name": "Cold Brew",
+    "price": 35.00,
+    "category": "Drinks",
+    "description": "Slow-steeped cold brew for a smooth, low-acid coffee",
+    "image": "https://images.pexels.com/photos/312418/pexels-photo-312418.jpeg?auto=compress&cs=tinysrgb&w=600"
+  },
+  {
+    "id": 18,
+    "name": "Cortado",
+    "price": 28.00,
+    "category": "Drinks",
+    "description": "Equal parts espresso and warm milk for a balanced sip",
+    "image": "https://images.pexels.com/photos/1035665/pexels-photo-1035665.jpeg?auto=compress&cs=tinysrgb&w=600"
+  },
+  {
+    "id": 19,
+    "name": "Double Espresso",
+    "price": 30.00,
+    "category": "Drinks",
+    "description": "A bold, concentrated double shot of espresso",
+    "image": "https://images.pexels.com/photos/302899/pexels-photo-302899.jpeg?auto=compress&cs=tinysrgb&w=600"
+  },
+  {
+    "id": 20,
+    "name": "Iced Coffee",
+    "price": 32.00,
+    "category": "Drinks",
+    "description": "Chilled brewed coffee served over ice",
+    "image": "https://images.pexels.com/photos/3736397/pexels-photo-3736397.jpeg?auto=compress&cs=tinysrgb&w=600"
+  },
+  {
+    "id": 21,
+    "name": "Frappe",
+    "price": 33.00,
+    "category": "Drinks",
+    "description": "Blended iced coffee drink, creamy and refreshing",
+    "image": "https://images.pexels.com/photos/1117862/pexels-photo-1117862.jpeg?auto=compress&cs=tinysrgb&w=600"
+  },
+  {
+    "id": 22,
+    "name": "Irish Coffee",
+    "price": 45.00,
+    "category": "Drinks",
+    "description": "Coffee with a hint of Irish cream flavor",
+    "image": "https://images.pexels.com/photos/4109747/pexels-photo-4109747.jpeg?auto=compress&cs=tinysrgb&w=600"
+  },
+  {
+    "id": 23,
+    "name": "Affogato",
+    "price": 38.00,
+    "category": "Drinks",
+    "description": "A scoop of vanilla ice cream drowned in a shot of hot espresso",
+    "image": "https://images.pexels.com/photos/4109997/pexels-photo-4109997.jpeg?auto=compress&cs=tinysrgb&w=600"
+  },
+  {
+    "id": 24,
+    "name": "Black Coffee",
+    "price": 25.00,
+    "category": "Drinks",
+    "description": "Freshly brewed black coffee, no milk, no sugar",
+    "image": "https://images.pexels.com/photos/34085/pexels-photo.jpg?auto=compress&cs=tinysrgb&w=600"
+  },
+  {
+    "id": 25,
+    "name": "Latte + Blueberry Muffin",
+    "price": 55.00,
+    "category": "Combos",
+    "description": "Caffe latte paired with a fresh blueberry muffin",
+    "image": "https://images.pexels.com/photos/533314/pexels-photo-533314.jpeg?auto=compress&cs=tinysrgb&w=600"
+  },
+  {
+    "id": 26,
+    "name": "Americano + Croissant",
+    "price": 50.00,
+    "category": "Combos",
+    "description": "Classic Americano with a buttery croissant",
+    "image": "https://images.pexels.com/photos/376464/pexels-photo-376464.jpeg?auto=compress&cs=tinysrgb&w=600"
+  },
+  {
+    "id": 27,
+    "name": "Mocha + Cake Slice",
+    "price": 65.00,
+    "category": "Combos",
+    "description": "Chocolatey mocha with a decadent cake slice",
+    "image": "https://images.pexels.com/photos/291528/pexels-photo-291528.jpeg?auto=compress&cs=tinysrgb&w=600"
+  },
+  {
+    "id": 28,
+    "name": "Frappe + Pie",
+    "price": 60.00,
+    "category": "Combos",
+    "description": "Refreshing frappe matched with a savory pie",
+    "image": "https://images.pexels.com/photos/236804/pexels-photo-236804.jpeg?auto=compress&cs=tinysrgb&w=600"
+  },
+  {
+    "id": 29,
+    "name": "Flat White + Carrot Muffin",
+    "price": 55.00,
+    "category": "Combos",
+    "description": "Silky flat white served with a carrot muffin",
+    "image": "https://images.pexels.com/photos/1417926/pexels-photo-1417926.jpeg?auto=compress&cs=tinysrgb&w=600"
+  },
+  {
+    "id": 30,
+    "name": "Espresso + Chocolate Muffin",
+    "price": 53.00,
+    "category": "Combos",
+    "description": "A sharp espresso balanced with a chocolate muffin",
+    "image": "https://images.pexels.com/photos/227432/pexels-photo-227432.jpeg?auto=compress&cs=tinysrgb&w=600"
+  },
+  {
+    "id": 31,
+    "name": "Irish Coffee + Samosa",
+    "price": 55.00,
+    "category": "Combos",
+    "description": "Irish coffee complemented by a crispy samosa",
+    "image": "https://images.pexels.com/photos/4109747/pexels-photo-4109747.jpeg?auto=compress&cs=tinysrgb&w=600"
+  },
+  {
+    "id": 32,
+    "name": "Regular Croissant",
+    "price": 25.00,
+    "category": "Snacks",
+    "description": "Classic buttery croissant",
+    "image": "https://images.pexels.com/photos/209206/pexels-photo-209206.jpeg?auto=compress&cs=tinysrgb&w=600"
+  },
+  {
+    "id": 33,
+    "name": "Vegetable Croissant",
+    "price": 27.00,
+    "category": "Snacks",
+    "description": "Flaky croissant filled with fresh veggies",
+    "image": "https://images.pexels.com/photos/3754673/pexels-photo-3754673.jpeg?auto=compress&cs=tinysrgb&w=600"
+  },
+  {
+    "id": 34,
+    "name": "Cake Slice",
+    "price": 35.00,
+    "category": "Snacks",
+    "description": "A slice of our daily baked cake",
+    "image": "https://images.pexels.com/photos/291528/pexels-photo-291528.jpeg?auto=compress&cs=tinysrgb&w=600"
+  },
+  {
+    "id": 35,
+    "name": "Pie",
+    "price": 30.00,
+    "category": "Snacks",
+    "description": "Golden, flaky pie with savory filling",
+    "image": "https://images.pexels.com/photos/70497/pexels-photo-70497.jpeg?auto=compress&cs=tinysrgb&w=600"
+  },
+  {
+    "id": 36,
+    "name": "Samosa",
+    "price": 15.00,
+    "category": "Snacks",
+    "description": "Crispy pastry stuffed with spiced potatoes and peas",
+    "image": "https://images.pexels.com/photos/6937405/pexels-photo-6937405.jpeg?auto=compress&cs=tinysrgb&w=600"
   }
 ]

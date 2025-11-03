@@ -27,13 +27,48 @@
                     <h2>Our Menu</h2>
                     <p>Discover our handcrafted beverages, fresh pastries, and delicious snacks</p>
                 </div>
+                <!-- Search Bar -->
+                <div class="search-bar">
+                    <input type="text" id="searchInput" placeholder="Search items..." onkeyup="searchItems()">
+                </div>
+
 
                 <div class="menu-filters">
-                    <button class="filter-btn active" data-category="All">All Items</button>
-                    <button class="filter-btn" data-category="Coffee">Coffee</button>
-                    <button class="filter-btn" data-category="Specialty Drinks">Specialty Drinks</button>
-                    <button class="filter-btn" data-category="Pastries">Pastries</button>
-                    <button class="filter-btn" data-category="Snacks">Snacks</button>
+                    <button class="filter-btn active" data-category="All">
+                        <i class="fa-solid fa-border-all"></i>
+                        <span class="filter-text">
+                            <span class="filter-title">All</span>
+                            <span class="filter-subtitle">Items</span>
+                        </span>
+                    </button>
+                    <button class="filter-btn" data-category="Coffee">
+                        <i class="fa-solid fa-mug-saucer"></i>
+                        <span class="filter-text">
+                            <span class="filter-title">Fresh</span>
+                            <span class="filter-subtitle">Coffee</span>
+                        </span>
+                    </button>
+                    <button class="filter-btn" data-category="Specialty Drinks">
+                        <i class="fa-solid fa-martini-glass-citrus"></i>
+                        <span class="filter-text">
+                            <span class="filter-title">Signature</span>
+                            <span class="filter-subtitle">Drinks</span>
+                        </span>
+                    </button>
+                    <button class="filter-btn" data-category="Pastries">
+                        <i class="fa-solid fa-croissant"></i>
+                        <span class="filter-text">
+                            <span class="filter-title">Fresh</span>
+                            <span class="filter-subtitle">Pastries</span>
+                        </span>
+                    </button>
+                    <button class="filter-btn" data-category="Snacks">
+                        <i class="fa-solid fa-burger"></i>
+                        <span class="filter-text">
+                            <span class="filter-title">Tasty</span>
+                            <span class="filter-subtitle">Snacks</span>
+                        </span>
+                    </button>
                 </div>
 
                 <div id="menuGrid" class="menu-grid">

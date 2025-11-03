@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="GBrowserService"><![CDATA[{
+  "history": [
+    {
+      "name": "GBrowser - IntelliJ IDEs Plugin | Marketplace",
+      "url": "https://plugins.jetbrains.com/plugin/14458-gbrowser"
+    },
+    {
+      "name": "Bites & Brew",
+      "url": "http://localhost/coffee_shop/index.php"
+    },
+    {
+      "name": "Menu - Bite & Brew",
+      "url": "http://localhost/coffee_shop/menu.php"
+    }
+  ]
+}]]></component>
+</project>
