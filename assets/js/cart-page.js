@@ -244,10 +244,12 @@ async function handleCheckout(e) {
     };
 
     try {
+        const token = document.querySelector('meta[name="csrf-token"]')?.getAttribute('content') || '';
         const response = await fetch('php/process-order.php', {
             method: 'POST',
             headers: {
-                'Content-Type': 'application/json'
+                'Content-Type': 'application/json',
+                'X-CSRF-Token': token
             },
             body: JSON.stringify(orderData)
         });
