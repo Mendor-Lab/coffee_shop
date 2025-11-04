@@ -20,7 +20,14 @@
     "price": 38.00,
     "category": "Coffee",
     "description": "Smooth espresso blended with steamed milk and a light foam finish",
-    "image": "https://images.pexels.com/photos/851555/pexels-photo-851555.jpeg?auto=compress&cs=tinysrgb&w=600"
+    "image": "https://images.pexels.com/photos/851555/pexels-photo-851555.jpeg?auto=compress&cs=tinysrgb&w=600",
+    "customizable": true,
+    "sizes": { "type": "delta", "values": { "Small": 0, "Regular": 0, "Large": 6 } },
+    "milkOptions": { "values": ["None","Whole","Skim","Oat","Almond","Soy"], "priceDelta": { "Oat": 4, "Almond": 4, "Soy": 4 } },
+    "sugar": { "min": 0, "max": 5 },
+    "extraShots": { "min": 0, "max": 3, "pricePerUnit": 6 },
+    "extras": [ {"key":"vanilla_syrup","label":"Vanilla Syrup","price":4}, {"key":"caramel_drizzle","label":"Caramel Drizzle","price":4} ],
+    "allowNotes": true
   },
   {
     "id": 3,
@@ -28,7 +35,13 @@
     "price": 30.00,
     "category": "Coffee",
     "description": "Bold espresso diluted with hot water for a smooth, full-bodied taste",
-    "image": "assets/public/images/americano.jpg"
+    "image": "assets/public/images/americano.jpg",
+    "customizable": true,
+    "sizes": { "type": "delta", "values": { "Small": 0, "Regular": 0, "Large": 4 } },
+    "sugar": { "min": 0, "max": 5 },
+    "extraShots": { "min": 0, "max": 3, "pricePerUnit": 6 },
+    "extras": [ {"key":"lemon_slice","label":"Lemon Slice","price":2} ],
+    "allowNotes": true
   },
   {
     "id": 4,
@@ -36,7 +49,12 @@
     "price": 25.00,
     "category": "Coffee",
     "description": "Concentrated coffee shot with intense flavor and rich crema",
-    "image": "https://images.pexels.com/photos/2396220/pexels-photo-2396220.jpeg?auto=compress&cs=tinysrgb&w=600"
+    "image": "https://images.pexels.com/photos/2396220/pexels-photo-2396220.jpeg?auto=compress&cs=tinysrgb&w=600",
+    "customizable": true,
+    "sizes": { "type": "absolute", "values": { "Single": 25.00, "Double": 30.00 } },
+    "sugar": { "min": 0, "max": 3 },
+    "extras": [ {"key":"whipped_cream","label":"Whipped Cream","price":5} ],
+    "allowNotes": true
   },
   {
     "id": 5,
@@ -44,7 +62,14 @@
     "price": 42.00,
     "category": "Coffee",
     "description": "Espresso with chocolate, steamed milk, and whipped cream",
-    "image": "assets/public/images/mocha.jpg"
+    "image": "assets/public/images/mocha.jpg",
+    "customizable": true,
+    "sizes": { "type": "delta", "values": { "Small": 0, "Regular": 0, "Large": 6 } },
+    "milkOptions": { "values": ["None","Whole","Skim","Oat","Almond","Soy"], "priceDelta": { "Oat": 4, "Almond": 4, "Soy": 4 } },
+    "sugar": { "min": 0, "max": 5 },
+    "extraShots": { "min": 0, "max": 3, "pricePerUnit": 6 },
+    "extras": [ {"key":"choc_shavings","label":"Chocolate Shavings","price":5}, {"key":"marshmallows","label":"Marshmallows","price":4} ],
+    "allowNotes": true
   },
   {
     "id": 6,
@@ -52,7 +77,14 @@
     "price": 40.00,
     "category": "Coffee",
     "description": "Velvety microfoam poured over a double shot of espresso",
-    "image": "https://images.pexels.com/photos/414555/pexels-photo-414555.jpeg?auto=compress&cs=tinysrgb&w=600"
+    "image": "https://images.pexels.com/photos/414555/pexels-photo-414555.jpeg?auto=compress&cs=tinysrgb&w=600",
+    "customizable": true,
+    "sizes": { "type": "delta", "values": { "Small": 0, "Regular": 0, "Large": 6 } },
+    "milkOptions": { "values": ["None","Whole","Skim","Oat","Almond","Soy"], "priceDelta": { "Oat": 4, "Almond": 4, "Soy": 4 } },
+    "sugar": { "min": 0, "max": 5 },
+    "extraShots": { "min": 0, "max": 3, "pricePerUnit": 6 },
+    "extras": [ {"key":"cinnamon","label":"Cinnamon","price":2} ],
+    "allowNotes": true
   },
   {
     "id": 7,
