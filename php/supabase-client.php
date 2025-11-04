@@ -29,19 +29,30 @@ class SupabaseClient {
             ?? '';
     }
 
+    private function baseUrl(string $table): string {
+        return rtrim($this->supabaseUrl, '/') . "/rest/v1/" . $table;
+    }
+
+    private function defaultHeaders(array $extra = []): array {
+        return array_merge([
+            'Content-Type: application/json',
+            'apikey: ' . $this->supabaseKey,
+            'Authorization: Bearer ' . $this->supabaseKey
+        ], $extra);
+    }
+
+    public function isConfigured(): bool {
+        return !empty($this->supabaseUrl) && !empty($this->supabaseKey);
+    }
+
     public function insert($table, $data) {
-        $url = rtrim($this->supabaseUrl, '/') . "/rest/v1/" . $table;
+        $url = $this->baseUrl($table);
 
         $ch = curl_init($url);
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
         curl_setopt($ch, CURLOPT_POST, true);
         curl_setopt($ch, CURLOPT_POSTFIELDS, json_encode($data));
-        curl_setopt($ch, CURLOPT_HTTPHEADER, [
-            'Content-Type: application/json',
-            'apikey: ' . $this->supabaseKey,
-            'Authorization: Bearer ' . $this->supabaseKey,
-            'Prefer: return=representation'
-        ]);
+        curl_setopt($ch, CURLOPT_HTTPHEADER, $this->defaultHeaders(['Prefer: return=representation']));
         // Timeouts for reliability
         curl_setopt($ch, CURLOPT_CONNECTTIMEOUT, 5);
         curl_setopt($ch, CURLOPT_TIMEOUT, 10);
@@ -62,4 +73,49 @@ class SupabaseClient {
         }
     }
 
+    public function select($table, $queryParams) {
+        $url = $this->baseUrl($table) . '?' . $queryParams;
+        $ch = curl_init($url);
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+        curl_setopt($ch, CURLOPT_HTTPHEADER, $this->defaultHeaders(['Accept: application/json']));
+        curl_setopt($ch, CURLOPT_CONNECTTIMEOUT, 5);
+        curl_setopt($ch, CURLOPT_TIMEOUT, 10);
+        $response = curl_exec($ch);
+        if ($response === false) {
+            $error = curl_error($ch);
+            curl_close($ch);
+            return ['success' => false, 'error' => $error, 'http_code' => 0];
+        }
+        $httpCode = curl_getinfo($ch, CURLINFO_HTTP_CODE);
+        curl_close($ch);
+        if ($httpCode >= 200 && $httpCode < 300) {
+            return ['success' => true, 'data' => json_decode($response, true)];
+        } else {
+            return ['success' => false, 'error' => $response, 'http_code' => $httpCode];
+        }
+    }
+
+    public function update($table, $queryParams, $data) {
+        $url = $this->baseUrl($table) . '?' . $queryParams;
+        $ch = curl_init($url);
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+        curl_setopt($ch, CURLOPT_CUSTOMREQUEST, 'PATCH');
+        curl_setopt($ch, CURLOPT_POSTFIELDS, json_encode($data));
+        curl_setopt($ch, CURLOPT_HTTPHEADER, $this->defaultHeaders(['Prefer: return=representation']));
+        curl_setopt($ch, CURLOPT_CONNECTTIMEOUT, 5);
+        curl_setopt($ch, CURLOPT_TIMEOUT, 10);
+        $response = curl_exec($ch);
+        if ($response === false) {
+            $error = curl_error($ch);
+            curl_close($ch);
+            return ['success' => false, 'error' => $error, 'http_code' => 0];
+        }
+        $httpCode = curl_getinfo($ch, CURLINFO_HTTP_CODE);
+        curl_close($ch);
+        if ($httpCode >= 200 && $httpCode < 300) {
+            return ['success' => true, 'data' => json_decode($response, true)];
+        } else {
+            return ['success' => false, 'error' => $response, 'http_code' => $httpCode];
+        }
+    }
 }
