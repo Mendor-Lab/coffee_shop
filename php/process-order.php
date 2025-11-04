@@ -60,17 +60,94 @@ foreach ($items as $it) {
     $id = isset($it['id']) ? (int)$it['id'] : 0;
     $qty = isset($it['quantity']) ? (int)$it['quantity'] : 0;
     if ($id <= 0 || $qty <= 0 || !isset($menuMap[$id])) { continue; }
-    $price = (float)$menuMap[$id]['price'];
-    $name = (string)$menuMap[$id]['name'];
-    $image = isset($menuMap[$id]['image']) ? (string)$menuMap[$id]['image'] : '';
-    $lineTotal = $price * $qty;
+    $menuItem = $menuMap[$id];
+    $name = (string)($menuItem['name'] ?? '');
+    $image = isset($menuItem['image']) ? (string)$menuItem['image'] : '';
+
+    // Recompute unit price using options schema
+    $unit = (float)($menuItem['price'] ?? 0);
+    $options = isset($it['options']) && is_array($it['options']) ? $it['options'] : [];
+
+    // Sizes
+    if (isset($menuItem['sizes']) && is_array($menuItem['sizes'])) {
+        $sizes = $menuItem['sizes'];
+        $values = isset($sizes['values']) && is_array($sizes['values']) ? $sizes['values'] : [];
+        $type = isset($sizes['type']) ? $sizes['type'] : 'delta';
+        $chosen = isset($options['size']['label']) ? (string)$options['size']['label'] : null;
+        if ($chosen && array_key_exists($chosen, $values)) {
+            if ($type === 'absolute') {
+                $unit = (float)$values[$chosen];
+            } else {
+                $unit = (float)($menuItem['price'] ?? 0) + (float)$values[$chosen];
+            }
+        } else if ($type === 'absolute' && !empty($values)) {
+            // Default to first defined absolute size to avoid zero pricing
+            $firstKey = array_keys($values)[0];
+            $unit = (float)$values[$firstKey];
+        }
+    }
+
+    $delta = 0.0;
+    // Milk
+    if (isset($menuItem['milkOptions']) && is_array($menuItem['milkOptions'])) {
+        $milk = isset($options['milk']['label']) ? (string)$options['milk']['label'] : null;
+        $allowed = isset($menuItem['milkOptions']['values']) && is_array($menuItem['milkOptions']['values']) ? $menuItem['milkOptions']['values'] : [];
+        $priceDelta = isset($menuItem['milkOptions']['priceDelta']) && is_array($menuItem['milkOptions']['priceDelta']) ? $menuItem['milkOptions']['priceDelta'] : [];
+        if ($milk && in_array($milk, $allowed, true)) {
+            $delta += (float)($priceDelta[$milk] ?? 0);
+        }
+    }
+
+    // Sugar (no price effect but clamp)
+    if (isset($menuItem['sugar']) && is_array($menuItem['sugar'])) {
+        $minSugar = (int)($menuItem['sugar']['min'] ?? 0);
+        $maxSugar = (int)($menuItem['sugar']['max'] ?? 5);
+        $sugar = isset($options['sugar']) ? (int)$options['sugar'] : $minSugar;
+        $sugar = max($minSugar, min($maxSugar, $sugar));
+        $options['sugar'] = $sugar; // sanitized
+    }
+
+    // Extra shots
+    if (isset($menuItem['extraShots']) && is_array($menuItem['extraShots'])) {
+        $minS = (int)($menuItem['extraShots']['min'] ?? 0);
+        $maxS = (int)($menuItem['extraShots']['max'] ?? 0);
+        $ppu = (float)($menuItem['extraShots']['pricePerUnit'] ?? 0);
+        $count = isset($options['extraShots']['count']) ? (int)$options['extraShots']['count'] : 0;
+        $count = max($minS, min($maxS, $count));
+        $delta += $count * $ppu;
+        $options['extraShots'] = [ 'count' => $count, 'unitPrice' => $ppu, 'delta' => $count * $ppu ];
+    }
+
+    // Extras checkboxes
+    if (isset($menuItem['extras']) && is_array($menuItem['extras'])) {
+        $allowedExtras = [];
+        foreach ($menuItem['extras'] as $ex) { if (isset($ex['key'])) { $allowedExtras[$ex['key']] = (float)($ex['price'] ?? 0); } }
+        $finalExtras = [];
+        if (isset($options['extras']) && is_array($options['extras'])) {
+            foreach ($options['extras'] as $ex) {
+                $key = is_array($ex) ? ($ex['key'] ?? null) : (is_string($ex) ? $ex : null);
+                if ($key !== null && array_key_exists($key, $allowedExtras)) {
+                    $finalExtras[] = [ 'key' => $key, 'price' => $allowedExtras[$key] ];
+                    $delta += (float)$allowedExtras[$key];
+                }
+            }
+        }
+        $options['extras'] = $finalExtras;
+    }
+
+    $unit = round($unit + $delta, 2);
+    $qty = max(1, $qty);
+    $lineTotal = round($unit * $qty, 2);
     $computedSubtotal += $lineTotal;
+
     $sanitizedItems[] = [
         'id' => $id,
         'name' => $name,
-        'price' => $price,
         'image' => $image,
-        'quantity' => $qty
+        'quantity' => $qty,
+        'unit_price' => $unit,
+        'line_total' => $lineTotal,
+        'options' => $options
     ];
 }
 $computedSubtotal = round($computedSubtotal, 2);

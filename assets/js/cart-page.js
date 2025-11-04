@@ -22,33 +22,45 @@ function displayCart() {
         <div class="cart-container">
             <div class="cart-items">
                 <h3>Cart Items (${getCartItemCount()})</h3>
-                ${cart.map(item => `
-                    <div class="cart-item" data-id="${item.id}">
+                ${cart.map(item => {
+                    const unit = (typeof item.unitPrice === 'number') ? item.unitPrice : Number(item.price||0);
+                    const key = item.id + '|' + (typeof optionsKey === 'function' ? optionsKey(item.options) : '');
+                    const o = item.options || {};
+                    const summary = [
+                        o.size?.label ? o.size.label : null,
+                        o.milk?.label ? (o.milk.label + ' milk') : null,
+                        (typeof o.sugar === 'number') ? (o.sugar + ' sugar') : null,
+                        (o.extraShots?.count ? (o.extraShots.count + ' extra shot' + (o.extraShots.count>1?'s':'')) : null),
+                        (Array.isArray(o.extras) && o.extras.length ? ('+' + o.extras.map(e=>e.label).join(', +')) : null)
+                    ].filter(Boolean).join(' • ');
+                    return `
+                    <div class="cart-item" data-key="${key}">
                         <div class="cart-item-image">
                             <img src="${item.image}" alt="${item.name}">
                         </div>
                         <div class="cart-item-details">
                             <div class="cart-item-header">
                                 <h4 class="cart-item-name">${item.name}</h4>
-                                <span class="cart-item-price">R${(item.price * item.quantity).toFixed(2)}</span>
+                                <span class="cart-item-price">R${(unit * item.quantity).toFixed(2)}</span>
                             </div>
+                            ${summary ? `<div class="cart-item-options muted" style="font-size:12px;margin:4px 0">${summary}</div>` : ''}
                             <div class="cart-item-actions">
                                 <div class="quantity-controls">
-                                    <button class="quantity-btn decrease-qty" data-id="${item.id}">
+                                    <button class="quantity-btn decrease-qty" data-key="${key}">
                                         <i class="fas fa-minus"></i>
                                     </button>
                                     <span class="quantity-display">${item.quantity}</span>
-                                    <button class="quantity-btn increase-qty" data-id="${item.id}">
+                                    <button class="quantity-btn increase-qty" data-key="${key}">
                                         <i class="fas fa-plus"></i>
                                     </button>
                                 </div>
-                                <button class="remove-btn" data-id="${item.id}">
+                                <button class="remove-btn" data-key="${key}">
                                     <i class="fas fa-trash"></i> Remove
                                 </button>
                             </div>
                         </div>
-                    </div>
-                `).join('')}
+                    </div>`;
+                }).join('')}
                 <div class="cart-actions">
                     <a href="menu.php" class="continue-shopping">Continue Shopping</a>
                     <button class="clear-cart" id="clearCartBtn">Clear Cart</button>
@@ -111,11 +123,11 @@ function displayCart() {
 function attachCartEventListeners() {
     document.querySelectorAll('.increase-qty').forEach(btn => {
         btn.addEventListener('click', function() {
-            const id = parseInt(this.dataset.id);
+            const key = this.dataset.key;
             const cart = getCart();
-            const item = cart.find(item => item.id === id);
+            const item = cart.find(ci => (ci.id + '|' + (typeof optionsKey==='function'? optionsKey(ci.options):'')) === key);
             if (item) {
-                updateQuantity(id, item.quantity + 1);
+                updateQuantityByKey(key, item.quantity + 1);
                 displayCart();
             }
         });
@@ -123,11 +135,11 @@ function attachCartEventListeners() {
 
     document.querySelectorAll('.decrease-qty').forEach(btn => {
         btn.addEventListener('click', function() {
-            const id = parseInt(this.dataset.id);
+            const key = this.dataset.key;
             const cart = getCart();
-            const item = cart.find(item => item.id === id);
+            const item = cart.find(ci => (ci.id + '|' + (typeof optionsKey==='function'? optionsKey(ci.options):'')) === key);
             if (item && item.quantity > 1) {
-                updateQuantity(id, item.quantity - 1);
+                updateQuantityByKey(key, item.quantity - 1);
                 displayCart();
             }
         });
@@ -135,9 +147,9 @@ function attachCartEventListeners() {
 
     document.querySelectorAll('.remove-btn').forEach(btn => {
         btn.addEventListener('click', function() {
-            const id = parseInt(this.dataset.id);
+            const key = this.dataset.key;
             if (confirm('Are you sure you want to remove this item?')) {
-                removeFromCart(id);
+                removeFromCartByKey(key);
                 displayCart();
                 showNotification('Item removed from cart');
             }

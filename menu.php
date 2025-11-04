@@ -89,6 +89,70 @@
 
     <div id="notification" class="notification"></div>
 
+    <!-- Customization Modal -->
+    <div id="customizeModal" class="modal" role="dialog" aria-modal="true" aria-hidden="true" style="display:none">
+        <div class="modal-dialog" role="document" style="max-width:520px; margin:40px auto; background:#fff; border:1px solid #eee; border-radius:10px; overflow:hidden; box-shadow:0 10px 30px rgba(0,0,0,.12)">
+            <div class="modal-header" style="display:flex;justify-content:space-between;align-items:center;padding:12px 16px;border-bottom:1px solid #eee">
+                <h3 id="customizeTitle" style="margin:0;font-size:18px">Customize</h3>
+                <button id="cancelCustomizeBtn" aria-label="Close" style="background:none;border:0;font-size:18px;cursor:pointer">×</button>
+            </div>
+            <div class="modal-body" style="padding:16px">
+                <div id="customizeImage" style="text-align:center;margin-bottom:12px"></div>
+                <div id="sizeGroup" style="margin-bottom:12px;display:none">
+                    <div class="muted" style="margin-bottom:6px">Size</div>
+                    <div id="sizeOptions"></div>
+                </div>
+                <div id="milkGroup" style="margin-bottom:12px;display:none">
+                    <label class="muted" for="optMilk">Milk</label>
+                    <select id="optMilk" style="width:100%;padding:8px;border:1px solid #ddd;border-radius:6px"></select>
+                </div>
+                <div id="sugarGroup" style="margin-bottom:12px;display:none">
+                    <div class="muted" style="margin-bottom:6px">Sugar</div>
+                    <div>
+                        <button id="sugarMinus" type="button">−</button>
+                        <input id="optSugar" type="number" min="0" value="0" style="width:60px;text-align:center" />
+                        <button id="sugarPlus" type="button">+</button>
+                    </div>
+                </div>
+                <div id="shotsGroup" style="margin-bottom:12px;display:none">
+                    <div class="muted" style="margin-bottom:6px">Extra shots</div>
+                    <div>
+                        <button id="shotsMinus" type="button">−</button>
+                        <input id="optShots" type="number" min="0" value="0" style="width:60px;text-align:center" />
+                        <button id="shotsPlus" type="button">+</button>
+                    </div>
+                </div>
+                <div id="extrasGroup" style="margin-bottom:12px;display:none">
+                    <div class="muted" style="margin-bottom:6px">Extras</div>
+                    <div id="optExtras"></div>
+                </div>
+                <div id="notesGroup" style="margin-bottom:12px;display:none">
+                    <label class="muted" for="optNotes">Special instructions</label>
+                    <textarea id="optNotes" rows="3" style="width:100%;padding:8px;border:1px solid #ddd;border-radius:6px" maxlength="200" placeholder="e.g., Less foam please"></textarea>
+                </div>
+                <div id="qtyGroup" style="margin-bottom:12px">
+                    <div class="muted" style="margin-bottom:6px">Quantity</div>
+                    <div>
+                        <button id="qtyMinus" type="button">−</button>
+                        <input id="optQty" type="number" min="1" value="1" style="width:60px;text-align:center" />
+                        <button id="qtyPlus" type="button">+</button>
+                    </div>
+                </div>
+                <div class="priceRow" style="display:flex;justify-content:space-between;align-items:center;padding:8px 0;border-top:1px solid #eee;margin-top:8px">
+                    <div>
+                        <div class="muted">Unit</div>
+                        <div id="unitPrice" style="font-weight:600">R0.00</div>
+                    </div>
+                    <div>
+                        <div class="muted">Line total</div>
+                        <div id="linePrice" style="font-weight:700;font-size:18px">R0.00</div>
+                    </div>
+                </div>
+                <button id="addToCartBtn" class="primary-button" style="width:100%;margin-top:12px">Add to Cart</button>
+            </div>
+        </div>
+    </div>
+
     <?php include 'includes/footer.php'; ?>
 
     <!-- JavaScript -->
