@@ -91,6 +91,8 @@ document.addEventListener('DOMContentLoaded', function() {
         formMessage.style.display = 'none';
 
         const formData = new FormData(contactForm);
+        const token = document.querySelector('meta[name="csrf-token"]')?.getAttribute('content') || '';
+        formData.append('csrf_token', token);
 
         try {
             const response = await fetch('php/send-mail.php', {

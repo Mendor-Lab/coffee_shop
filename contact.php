@@ -1,3 +1,4 @@
+<?php require_once __DIR__ . '/includes/bootstrap.php'; ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -5,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact Us - Bite & Brew</title>
     <meta name="description" content="Get in touch with Bite&Brew. Visit us, call, or send us a message.">
+    <?php if (isset($_SESSION['csrf_token'])) { echo '<meta name="csrf-token" content="'.htmlspecialchars($_SESSION['csrf_token'], ENT_QUOTES).'">'; } ?>
 
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
@@ -36,6 +38,9 @@
                                 <div>
                                     <h4>Our Location</h4>
                                     <p>123 Coffee Street, Brew District<br>Vaal, Vanderbijl 1939</p>
+                                    <div class="map-container" style="margin-top: 12px; width: 100%; height: 320px; border-radius: 8px; overflow: hidden; border: 1px solid #e5e5e5;">
+                                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d639.5147798323384!2d27.86284299021355!3d-26.711520125460787!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1e9459a70c417c1d%3A0xfc3fae7fa3b1f3f6!2sAmphi%20Theatre!5e1!3m2!1sen!2sza!4v1762252640840!5m2!1sen!2sza" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                                    </div>
                                 </div>
                             </div>
                             <div class="contact-item">
@@ -74,6 +79,10 @@
                     <div class="contact-form-wrapper">
                         <h3>Send us a Message</h3>
                         <form id="contactForm" class="contact-form">
+                            <div style="position:absolute;left:-10000px;top:auto;width:1px;height:1px;overflow:hidden;">
+                                <label for="website">Leave this field empty</label>
+                                <input type="text" id="website" name="website" autocomplete="off" tabindex="-1">
+                            </div>
                             <div class="form-group">
                                 <label for="name">Your Name *</label>
                                 <input type="text" id="name" name="name" class="form-control" required>

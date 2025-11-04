@@ -1,2 +1,9 @@
 node_modules/
 .env
+# Logs
+logs/
+php/orders.txt
+php/messages.txt
+*.log
+.DS_Store
+*.swp
